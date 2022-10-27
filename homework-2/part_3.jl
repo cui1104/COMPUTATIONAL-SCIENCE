@@ -62,3 +62,14 @@ gif(anime)
 #     scatter!(gifdt_mid[1,:,l], gifdt_mid[2,:,l], xlim = [-1,2], ylim = [-1,2],label="particle") # store the scatter plot as frame every iteration
 # end
 # gif(anime2)
+
+tspan3 = [0.0, 1.0]
+dtsmall = 1/1024
+partdata = solve(ForwardEuler(),u0,rhs!,tspan3,dtsmall,5;num_saved_steps=1)[1] # generate the positions of the particles
+
+scatter(partdata[1,:,1],partdata[2,:,1],label = "initial", xlim = [-1,1], ylim = [-1,1]) # initial pos of the particles
+scatter!(partdata[1,:,2],partdata[2,:,2],label="final") # final pos of the particles
+xlabel!("x axis")
+ylabel!("y axis")
+title!("Initial positions and final positions of the particles")
+savefig("C:\\Users\\admin\\Desktop\\Rice\\2022 fall\\caam419\\initialandfinal.png")
