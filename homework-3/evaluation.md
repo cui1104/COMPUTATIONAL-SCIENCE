@@ -33,7 +33,7 @@
     ==30255==    still reachable: 0 bytes in 0 blocks
     ==30255==         suppressed: 0 bytes in 0 blocks
 
-    Total +=5
+    Total +=15
       ```
 5. Deduct 1-2 points if the student does unnecessary things (like allocate unnecessary memory in the matrix-vector multiplication routines)
     ```
